@@ -18,9 +18,9 @@ class App extends Component {
     return (
       <div className="App">   
         <ul>
-          {this.state.popular_movies.map((movie:any) => 
-            <li key={movie.id}>{movie.title}</li>
-            )}  
+          {this.state.popular_movies.map((movie:any) =>          
+            <li key={movie.id}>{movie.title}</li>                  
+          )}  
         </ul>    
       </div>
     );
