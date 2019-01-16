@@ -1,5 +1,13 @@
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
+##Before running the project
+
+1. Get TMDB api key from: https://www.themoviedb.org/documentation/api
+2. Create .env to the root of the project
+3. Add line REACT_APP_TMDB_API_KEY=<TMDbApiKey> to .env
+4. Replace <TMDbApiKey> with your api key
+5. Access the api key from any file of the project using process.env.REACT_APP_TMDB_API_KEY
+
 ## Available Scripts
 
 In the project directory, you can run:
@@ -37,12 +45,6 @@ Instead, it will copy all the configuration files and the transitive dependencie
 
 You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
 
-### API_KEY
-
-**Note: REACT_APP_ prefix is required before the api name for create-react-app to find the env variable. 
-
-To be able to use this code you need to create an .env file on project root directory and put your api key in this file. Example-
-REACT_APP_NAME_OF_YOUR_API_KEY=YOUR_API_KEY. Then, access the api key from any file of the app using process.env.REACT_APP_YOUR_API_KEY_NAME.
 
 ## Learn More
 
