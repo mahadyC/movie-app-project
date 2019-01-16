@@ -1,6 +1,6 @@
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
-##Before running the project
+### Before running the project
 
 1. Get TMDB api key from: https://www.themoviedb.org/documentation/api
 2. Create .env to the root of the project
