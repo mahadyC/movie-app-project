@@ -22,12 +22,10 @@ class App extends Component {
   }
   componentDidMount() {
     api.getPopularMovies().then((movieList) => {
-      console.log(movieList);
       this.setState({popular_movies: movieList})
     })
   }
   render() {
-    console.log(this.state.popular_movies)
     return (
       <div className="App">  
         <div className='grid-container'>
