@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import './App.css';
 import * as api from './api';
+import './movie.css';
 
 type Movie = {
   id: string;
@@ -12,16 +13,6 @@ type Movie = {
 
 type State = {
   popular_movies: Movie[]
-}
-
-const containerStyle = {
-  display: 'grid',
-  justifyContent: 'space-evenly',
-  gridTemplateColumns: '1fr 1fr 1fr 1fr',
-  gridGap: 10,
-  backgroundColor: '#113049',
-  padding: 10,
-  overflow: 'hidden'
 }
 
 class App extends Component {
@@ -39,12 +30,12 @@ class App extends Component {
     console.log(this.state.popular_movies)
     return (
       <div className="App">  
-        <div className='grid-container' style={containerStyle}>
+        <div className='grid-container'>
           {this.state.popular_movies.map((movie) =>          
-            <div key={movie.id} className='grid-item' style={{textAlign: "center", padding: 30, fontSize: 30, position: "relative"}}>
-              <div className='movie-card-top' style={{ height: 500, backgroundImage: `url(https://image.tmdb.org/t/p/w342/${movie.poster_path})`, borderRadius: 5}}></div>
-              <div className='movie-release-date' style={{textAlign: "left", color: "#5A5F61", fontSize: 16, paddingTop: 20}}>{movie.release_date}</div>
-              <div className='movie-title' style={{textAlign: "left", color: "#AFBABA", fontSize: 20}}>{movie.title}</div>             
+            <div key={movie.id} className='grid-item'>
+              <div className='movie-card-top' style={{backgroundImage: `url(https://image.tmdb.org/t/p/w342/${movie.poster_path})`}}></div>
+              <div className='movie-release-date'>{movie.release_date}</div>
+              <div className='movie-title'>{movie.title}</div>             
             </div>                  
           )}  
         </div>    
