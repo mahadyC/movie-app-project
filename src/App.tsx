@@ -1,8 +1,6 @@
 import React, { Component } from 'react';
-import logo from './logo.svg';
 import './App.css';
 import * as api from './api';
-import { url } from 'inspector';
 
 type Movie = {
   id: string;
