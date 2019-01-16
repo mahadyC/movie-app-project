@@ -1,5 +1,13 @@
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
+### Before running the project
+
+1. Get TMDB api key from: https://www.themoviedb.org/documentation/api
+2. Create .env to the root of the project
+3. Add line REACT_APP_TMDB_API_KEY=<TMDbApiKey> to .env
+4. Replace <TMDbApiKey> with your api key
+5. Access the api key from any file of the project using process.env.REACT_APP_TMDB_API_KEY
+
 ## Available Scripts
 
 In the project directory, you can run:
@@ -36,6 +44,7 @@ If you aren’t satisfied with the build tool and configuration choices, you can
 Instead, it will copy all the configuration files and the transitive dependencies (Webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
 
 You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
+
 
 ## Learn More
 
