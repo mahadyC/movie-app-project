@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-
+import '../movie.css';
 type Props = {
   movie: {
     id: string;
@@ -18,16 +18,26 @@ type Genres = {
 
 class MovieDetail extends Component<Props> {
     render() {
-        console.log(this.props.genres)
+        let releaseDate = new Date(this.props.movie.release_date).getFullYear();
         return (
-            <div>
-              <h1>{this.props.movie.title}</h1>
-              <div>{this.props.movie.vote_average}</div>
-              <div>{this.props.genres.map((genre) => <div>{genre.name}</div>)}</div>
-              <div>{this.props.movie.release_date}</div>
-              <div>{this.props.movie.overview}</div>
-              <div style={{ width: 154, height: 200, backgroundImage: `url(https://image.tmdb.org/t/p/w154/${this.props.movie.poster_path})`}}>Some Images of the </div>
+            <div className="movie-detail-container">
+                <div className="movie-detail">
+                    <h1>{this.props.movie.title}</h1>
+                    <div className="inlining">
+                        <div className="rating">{this.props.movie.vote_average}/<span>10</span></div>
+                        <div className="genres">{this.props.genres.map((genre) => <div key={genre.id} className="genre">{genre.name}</div>)}</div>
+                        <div className="release-date">{releaseDate}</div>
+                    </div>                    
+                    <div className="overview">{this.props.movie.overview}</div>
+                    <div className="images">
+                        <div className="image" style={{ backgroundImage: `url(https://image.tmdb.org/t/p/w154/${this.props.movie.poster_path})`}}></div>
+                        <div className="image"style={{ backgroundImage: `url(https://image.tmdb.org/t/p/w154/${this.props.movie.poster_path})`}}></div>
+                        <div className="image" style={{ backgroundImage: `url(https://image.tmdb.org/t/p/w154/${this.props.movie.poster_path})`}}></div>
+                    </div>
+                    
+                </div>
             </div>
+            
         )
     }
 }
