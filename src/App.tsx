@@ -49,7 +49,7 @@ class App extends Component {
         <div>
           {this.state.popular_movies.map((movie) => 
             <Route key={movie.id} exact path={`/${movie.id}`} render={() => 
-            <MovieDetail genres={this.state.movie_genres}/>}></Route>
+            <MovieDetail />}></Route>
           )}
         </div>
            

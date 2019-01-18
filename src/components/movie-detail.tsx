@@ -1,9 +1,7 @@
 import React, { Component } from "react";
 import '../movie.css';
 import * as api from '../api';
-type Props = {
-  genres: Genres[]
-}
+
 type Genres = {
     id: number;
     name: string;
@@ -23,7 +21,7 @@ type State = {
     selected_movie?: Movie;
 }
 
-class MovieDetail extends Component<Props> {
+class MovieDetail extends Component {
 
     state: State = { 
     }
