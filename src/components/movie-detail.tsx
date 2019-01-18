@@ -16,6 +16,7 @@ type Movie = {
     poster_path: string;
     vote_average: number;
     overview: string;
+    genres: Genres[];
 }
 
 type State = {
@@ -34,7 +35,7 @@ class MovieDetail extends Component<Props> {
     }
 
     render() {
-        console.log((this.state.selected_movie) ? this.state.selected_movie.title : "")
+        console.log((this.state.selected_movie) ? this.state.selected_movie.genres : "")
         let releaseDate = new Date((this.state.selected_movie) ? this.state.selected_movie.release_date:"").getFullYear();
         return (
             <div className="movie-detail-container">
@@ -44,7 +45,7 @@ class MovieDetail extends Component<Props> {
                                 <h1>{this.state.selected_movie.title}</h1>
                                 <div className="inlining">
                                     <div className="rating">{this.state.selected_movie.vote_average}/<span>10</span></div>
-                                    <div className="genres">{this.props.genres.map((genre) => <div key={genre.id} className="genre">{genre.name}</div>)}</div>
+                                    <div className="genres">{this.state.selected_movie.genres.map((genre) => <div key={genre.id} className="genre">{genre.name}</div>)}</div>
                                     <div className="release-date">{releaseDate}</div>
                                 </div>                    
                                 <div className="overview">{this.state.selected_movie.overview}</div>
