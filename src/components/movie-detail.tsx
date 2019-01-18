@@ -1,12 +1,12 @@
 import React, { Component } from "react";
 import '../movie.css';
 import * as api from '../api';
+import { RouteComponentProps } from "react-router";
 
 type Genres = {
     id: number;
     name: string;
-  }
-
+}
 type Movie = {
     id: string;
     title: string;
@@ -20,20 +20,20 @@ type Movie = {
 type State = {
     selected_movie?: Movie;
 }
+type Props = RouteComponentProps<{movieId: string}>;
 
-class MovieDetail extends Component {
+class MovieDetail extends Component<Props> {
 
     state: State = { 
     }
 
     componentDidMount() {
-        api.getMovieDetail("297802").then((movie) => {
+        api.getMovieDetail(this.props.match.params.movieId).then((movie) => {
           this.setState({selected_movie: movie})
         })
     }
 
     render() {
-        console.log((this.state.selected_movie) ? this.state.selected_movie.genres : "")
         let releaseDate = new Date((this.state.selected_movie) ? this.state.selected_movie.release_date:"").getFullYear();
         return (
             <div className="movie-detail-container">
