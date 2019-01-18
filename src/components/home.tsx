@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import * as api from '../api';
-import '../movie.css';
+import './home.css';
 import { Link } from 'react-router-dom';
 
 type Movie = {
