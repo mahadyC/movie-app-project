@@ -5,7 +5,6 @@ import './movie.css';
 import { Route, Link } from 'react-router-dom';
 import MovieDetail from './components/movie-detail';
 import Home from './components/home';
-
 type Movie = {
   id: string;
   title: string;
@@ -50,7 +49,7 @@ class App extends Component {
         <div>
           {this.state.popular_movies.map((movie) => 
             <Route key={movie.id} exact path={`/${movie.id}`} render={() => 
-            <MovieDetail movie={movie} genres={this.state.movie_genres}/>}></Route>
+            <MovieDetail genres={this.state.movie_genres}/>}></Route>
           )}
         </div>
            

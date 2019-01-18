@@ -10,4 +10,4 @@ export const getPopularMovies = () =>
 export const getMovieDetail = (movieId: string) =>
   fetch(`${api}/${movieId}?api_key=${API_KEY}`)
     .then(res => res.json())
-    .then(data => data.genres)
+    .then(data => data)
