@@ -4,6 +4,8 @@ import * as api from './api';
 import './movie.css';
 import { Route, Link } from 'react-router-dom';
 import MovieDetail from './components/movie-detail';
+import Home from './components/home';
+
 type Movie = {
   id: string;
   title: string;
@@ -44,19 +46,7 @@ class App extends Component {
     console.log(this.state.movie_genres)
     return (
       <div className="App">  
-        <Route exact path="/" render={() => 
-          <div className='grid-container'>
-            {this.state.popular_movies.map((movie) =>          
-              <div key={movie.id} className='grid-item'>
-                <Link to={`/${movie.id}`} onClick={() => this.fetchMovieDetail(movie.id)}>
-                  <div className='movie-card-top' style={{backgroundImage: `url(https://image.tmdb.org/t/p/w342/${movie.poster_path})`}}></div>
-                </Link> 
-                <div className='movie-release-date'>{movie.release_date}</div>
-                <div className='movie-title'>{movie.title}</div>             
-              </div>                  
-            )}  
-          </div> 
-        }></Route>
+        <Route exact path="/" component={Home}></Route>
         <div>
           {this.state.popular_movies.map((movie) => 
             <Route key={movie.id} exact path={`/${movie.id}`} render={() => 
