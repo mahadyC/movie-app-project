@@ -1,0 +1,19 @@
+version: 2
+jobs:
+  build:
+    docker:
+      - image: circleci/node:8.15.0-alpine
+    steps:
+      - checkout
+      - run: 
+          name: Install dependencies
+          command: npm install
+      - run:
+          name: Run build
+          command: npm run build
+workflows:
+  version: 2
+  install_and_build:
+    jobs:
+      - build
+      
