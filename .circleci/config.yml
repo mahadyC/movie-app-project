@@ -10,3 +10,9 @@ jobs:
       - run:
           name: Run build
           command: npm run build
+workflows:
+  version: 2
+  install_and_build:
+    jobs:
+      - build
+      
