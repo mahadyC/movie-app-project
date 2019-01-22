@@ -4,6 +4,7 @@ jobs:
     docker:
       - image: circleci/node:8.15.0-alpine
     steps:
+      - checkout
       - run: 
           name: Install dependencies
           command: npm install
