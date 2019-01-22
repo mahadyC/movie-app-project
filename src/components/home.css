@@ -2,11 +2,10 @@
 .grid-container {
     display: grid;
     justify-content: space-evenly;
-    grid-template-columns: 1fr 1fr 1fr 1fr;
+    grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
     grid-gap: 10;
-    background-color: #113049;
+    background-color: rgb(5, 18, 24);
     padding: 10px;
-    overflow: hidden;
 }
 
 
