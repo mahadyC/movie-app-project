@@ -33,7 +33,7 @@ class Home extends Component {
                 {this.state.popular_movies.map((movie) =>          
                     <div key={movie.id} className='grid-item'>
                         <Link to={`/${movie.id}`}>
-                        <div className='movie-card-top' style={{backgroundImage: `url(https://image.tmdb.org/t/p/w342/${movie.poster_path})`}}></div>
+                        <div className='movie-card-top' style={{width: 185, height: 278, backgroundImage: `url(https://image.tmdb.org/t/p/w185_and_h278_bestv2${movie.poster_path})`}}></div>
                         </Link> 
                         <div className='movie-release-date'>{movie.release_date}</div>
                         <div className='movie-title'>{movie.title}</div>             
