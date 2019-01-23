@@ -1,13 +1,15 @@
 /* movie container */
 .grid-container {
     display: grid;
-    justify-content: space-evenly;
     grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
-    grid-gap: 10;
+    grid-column-gap: 10px;
+    grid-row-gap: 10px;
+    justify-items: center;
+    align-items: center;
+    justify-content: center;
+    align-content: center;
     background-color: rgb(5, 18, 24);
-    padding: 10px;
 }
-
 
 
 /* movie card */
