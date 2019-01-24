@@ -1,39 +1,50 @@
+/* page container */
+.page-container {
+    background-color: #24323F
+}
+
+
 /* movie container */
 .grid-container {
     display: grid;
     grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
-    grid-column-gap: 10px;
-    grid-row-gap: 10px;
-    justify-items: center;
-    align-items: center;
-    justify-content: center;
-    align-content: center;
-    background-color: rgb(5, 18, 24);
+    grid-column-gap: 20px;
+    grid-row-gap: 40px;
+    padding-left: 80px;
+    padding-right: 80px;
 }
 
+h1{
+    text-align: left;
+    padding-left: 80px;
+    padding-top: 60px;
+    color: #FDFEFF;
+    margin-top: 0px;
+}
+
+hr {
+    margin-left: 80px;
+    margin-right: 80px;
+    margin-bottom: 50px;
+    margin-top: 40px;
+    color: #303E4B;
+}
 
 /* movie card */
 
-.grid-item {
-    position: relative;
-    text-align: center; 
-    padding: 30px; 
-    font-size: 30px; 
-}
-
 .movie-card-top {
     border-radius: 5px;
+    width: 100%;
 }
 
 .movie-release-date {
-    text-align: left;
-    color: #5A5F61;
-    font-size: 16px;
+    color: #666B73;
     padding-top: 20px;
+    text-align: left;
 }
 
 .movie-title {
     text-align: left;
-    color: #AFBABA; 
+    color: #FAFAFC; 
     font-size: 20px;
 }
