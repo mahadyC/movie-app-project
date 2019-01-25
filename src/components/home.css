@@ -3,7 +3,6 @@
     background-color: #24323F
 }
 
-
 /* movie container */
 .grid-container {
     display: grid;
@@ -12,6 +11,7 @@
     grid-row-gap: 40px;
     padding-left: 80px;
     padding-right: 80px;
+    padding-bottom: 20px;
 }
 
 h1{
@@ -32,9 +32,27 @@ hr {
 
 /* movie card */
 
+.image-card {
+    position: relative;
+}
+
 .movie-card-top {
     border-radius: 5px;
     width: 100%;
+}
+
+.rating {
+    width: 45px;
+    height: 45px;
+    position: absolute;
+    right: 20px;
+    top: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 50%;
+    background-color: #74D5AA;
+    color: #294448;  
 }
 
 .movie-release-date {

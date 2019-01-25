@@ -35,9 +35,12 @@ class Home extends Component {
                 <div className='grid-container'>
                     {this.state.popular_movies.map((movie) =>          
                         <div key={movie.id} className='grid-item'>
-                            <Link to={`/${movie.id}`}>
-                            <img className='movie-card-top' src={`https://image.tmdb.org/t/p/w500${movie.poster_path}`} alt='Poster of the movie'/>
-                            </Link> 
+                            <div className='image-card'>
+                                <Link to={`/${movie.id}`}>            
+                                <img className='movie-card-top' src={`https://image.tmdb.org/t/p/w500${movie.poster_path}`} alt='Poster of the movie'/>  
+                                </Link>   
+                                <div className='rating'>{movie.vote_average}</div>                                
+                            </div>
                             <div className='movie-release-date'>{new Date(movie.release_date).getFullYear()}</div>
                             <div className='movie-title'>{movie.title}</div>             
                         </div> 
