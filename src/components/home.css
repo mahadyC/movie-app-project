@@ -7,26 +7,24 @@
 .grid-container {
     display: grid;
     grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
-    grid-column-gap: 20px;
-    grid-row-gap: 40px;
-    padding-left: 80px;
-    padding-right: 80px;
-    padding-bottom: 20px;
-}
-
+    grid-column-gap: 1.25em;
+    grid-row-gap: 2.5em;
+    padding-left: 5em;
+    padding-right: 5em;
+    padding-bottom: 1.25em;
+} 
 h1{
+    margin-top: 0;
+    padding-top: 3.5em;
+    padding-left: 2.5em;
     text-align: left;
-    padding-left: 80px;
-    padding-top: 60px;
     color: #FDFEFF;
-    margin-top: 0px;
 }
-
 hr {
-    margin-left: 80px;
-    margin-right: 80px;
-    margin-bottom: 50px;
-    margin-top: 40px;
+    margin-top: 2.5em;
+    margin-right: 5em;
+    margin-bottom: 3.125em;
+    margin-left: 5em;
     color: #303E4B;
 }
 
@@ -35,18 +33,16 @@ hr {
 .image-card {
     position: relative;
 }
-
 .movie-card-top {
     border-radius: 5px;
-    width: 100%;
+    max-width: 100%;
 }
-
 .rating {
-    width: 45px;
-    height: 45px;
+    width: 2.8125em;
+    height: 2.8125em;
     position: absolute;
-    right: 20px;
-    top: 20px;
+    top: 1.25em;
+    right: 1.25em;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -54,15 +50,36 @@ hr {
     background-color: #74D5AA;
     color: #294448;  
 }
-
 .movie-release-date {
     color: #666B73;
-    padding-top: 20px;
+    padding-top: 1.25em;
     text-align: left;
 }
-
 .movie-title {
     text-align: left;
     color: #FAFAFC; 
-    font-size: 20px;
+    font-size: 1.25em;
+}
+
+/* Design for tablets and phones */
+/* Always add media queries at the bottom of the css file to avoid overriding issues */
+@media only screen and (max-width: 768px) {
+    .grid-container {
+        grid-template-columns: 1fr 1fr 1fr;
+    }
+} 
+
+@media only screen and (max-width: 600px) {
+    .grid-container {
+        grid-template-columns: 1fr 1fr;
+        padding-left: 2.5em;
+        padding-right: 2.5em;
+    }
+    h1 {
+        padding-left: 1.25em;
+    }
+    hr {
+        margin-right: 2.5em;
+        margin-left: 2.5em;
+    }
 }
