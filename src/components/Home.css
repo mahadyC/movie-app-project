@@ -1,6 +1,8 @@
 /* page container */
 .page-container {
-    background-color: #24323F
+    background-color: #24323F;
+    max-width: 900px;
+    margin: 0 auto;
 }
 
 /* movie container */
@@ -9,8 +11,8 @@
     grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
     grid-column-gap: 1.25em;
     grid-row-gap: 2.5em;
-    padding-left: 5em;
-    padding-right: 5em;
+    /* padding-left: 5em;
+    padding-right: 5em; */
     padding-bottom: 1.25em;
 } 
 h1{
@@ -69,8 +71,8 @@ hr {
 @media (max-width: 600px) {
     .grid-container {
         grid-template-columns: 1fr 1fr;
-        padding-left: 1.25em;
-        padding-right: 1.25em;
+        /* padding-left: 1.25em;
+        padding-right: 1.25em; */
     }
     h1 {
         padding-left: 1.25em;
@@ -83,8 +85,8 @@ hr {
 @media (max-width: 375px) {
     .grid-container {
         grid-template-columns: 1fr;
-        padding-left: 1.25em;
-        padding-right: 1.25em;
+        /* padding-left: 1.25em;
+        padding-right: 1.25em; */
     }
     h1 {
         padding-left: 1.25em;
