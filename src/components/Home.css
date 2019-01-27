@@ -66,18 +66,31 @@ hr {
         grid-template-columns: 1fr 1fr 1fr;
     }
 } 
-
 @media (max-width: 600px) {
     .grid-container {
         grid-template-columns: 1fr 1fr;
-        padding-left: 2.5em;
-        padding-right: 2.5em;
+        padding-left: 1.25em;
+        padding-right: 1.25em;
     }
     h1 {
         padding-left: 1.25em;
     }
     hr {
-        margin-right: 2.5em;
-        margin-left: 2.5em;
+        margin-right: 1.25em;
+        margin-left: 1.25em;
+    }
+}
+@media (max-width: 375px) {
+    .grid-container {
+        grid-template-columns: 1fr;
+        padding-left: 1.25em;
+        padding-right: 1.25em;
+    }
+    h1 {
+        padding-left: 1.25em;
+    }
+    hr {
+        margin-right: 1.25em;
+        margin-left: 1.25em;
     }
 }
