@@ -11,9 +11,9 @@
 .grid-container {
     display: grid;
     grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
-    grid-column-gap: 1.25em;
-    grid-row-gap: 2.5em;
-    padding-bottom: 1.25em;
+    grid-column-gap: 20px;
+    grid-row-gap: 40px;
+    padding-bottom: 20px;
 } 
 h1{
     margin-top: 0;
@@ -21,7 +21,7 @@ h1{
     color: #FDFEFF;
 }
 hr {
-    margin-top: 2.5em;
+    margin-top: 40px;
     margin-bottom: 3.125em;
     color: #303E4B;
 }
@@ -36,11 +36,11 @@ hr {
     max-width: 100%;
 }
 .rating {
-    width: 2.8125em;
-    height: 2.8125em;
+    width: 45px;
+    height: 45px;
     position: absolute;
-    top: 1.25em;
-    right: 1.25em;
+    top: 20px;
+    right: 20px;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -51,11 +51,11 @@ hr {
 }
 .movie-release-date {
     color: #666B73;
-    padding-top: 1.25em;
+    padding-top: 20px;
 }
 .movie-title {
     color: #FAFAFC; 
-    font-size: 1.25em;
+    font-size: 20px;
 }
 
 /* Design for tablets and phones */
