@@ -17,7 +17,6 @@ h1{
     margin-top: 0;
     padding-top: 3.5em;
     padding-left: 2.5em;
-    text-align: left;
     color: #FDFEFF;
 }
 hr {
@@ -54,10 +53,8 @@ hr {
 .movie-release-date {
     color: #666B73;
     padding-top: 1.25em;
-    text-align: left;
 }
 .movie-title {
-    text-align: left;
     color: #FAFAFC; 
     font-size: 1.25em;
 }
