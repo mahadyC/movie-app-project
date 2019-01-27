@@ -48,7 +48,8 @@ hr {
     align-items: center;
     border-radius: 50%;
     background-color: #74D5AA;
-    color: #294448;  
+    color: #294448; 
+    pointer-events: none; 
 }
 .movie-release-date {
     color: #666B73;
