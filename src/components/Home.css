@@ -61,13 +61,13 @@ hr {
 
 /* Design for tablets and phones */
 /* Always add media queries at the bottom of the css file to avoid overriding issues */
-@media only screen and (max-width: 900px) {
+@media (max-width: 900px) {
     .grid-container {
         grid-template-columns: 1fr 1fr 1fr;
     }
 } 
 
-@media only screen and (max-width: 600px) {
+@media (max-width: 600px) {
     .grid-container {
         grid-template-columns: 1fr 1fr;
         padding-left: 2.5em;
