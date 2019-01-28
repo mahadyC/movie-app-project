@@ -11,6 +11,12 @@ jobs:
       - run:
           name: Run build
           command: npm run build
+deployment:
+  staging:
+    branch: master
+    heroku:
+      appname: project-movie-app
+
 workflows:
   version: 2
   install_and_build:
