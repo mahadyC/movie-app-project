@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import * as api from '../api';
-import './home.css';
+import './Home.css';
 import { Link } from 'react-router-dom';
 
 type Movie = {
@@ -29,17 +29,25 @@ class Home extends Component {
 
     render() {
         return(
-            <div className='grid-container'>
-                {this.state.popular_movies.map((movie) =>          
-                    <div key={movie.id} className='grid-item'>
-                        <Link to={`/${movie.id}`}>
-                        <div className='movie-card-top' style={{backgroundImage: `url(https://image.tmdb.org/t/p/w342/${movie.poster_path})`}}></div>
-                        </Link> 
-                        <div className='movie-release-date'>{movie.release_date}</div>
-                        <div className='movie-title'>{movie.title}</div>             
-                    </div> 
-                )}
+            <div className='page-container'>
+                <h1>Popular Movies</h1>
+                <hr></hr>
+                <div className='grid-container'>
+                    {this.state.popular_movies.map((movie) =>          
+                        <div key={movie.id} className='grid-item'>
+                            <div className='image-card'>
+                                <Link to={`/${movie.id}`}>            
+                                <img className='movie-card-top' src={`https://image.tmdb.org/t/p/w500${movie.poster_path}`} alt='Poster of the movie'/>  
+                                </Link>   
+                                <div className='rating'>{movie.vote_average}</div>                                
+                            </div>
+                            <div className='movie-release-date'>{new Date(movie.release_date).getFullYear()}</div>
+                            <div className='movie-title'>{movie.title}</div>             
+                        </div> 
+                    )}
+                </div>
             </div>
+            
         )
     }
 }

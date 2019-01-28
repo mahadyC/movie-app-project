@@ -1,0 +1,76 @@
+/* page container */
+.page-container {
+    max-width: 1170px;
+    margin: 0 auto;
+    padding-left: 16px;
+    padding-right: 16px;
+}
+
+/* movie container */
+.grid-container {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+    grid-column-gap: 20px;
+    grid-row-gap: 40px;
+    padding-bottom: 20px;
+} 
+h1{
+    margin-top: 0;
+    padding-top: 56px;
+    color: #FDFEFF;
+}
+hr {
+    margin-top: 40px;
+    margin-bottom: 50px;
+    color: #303E4B;
+}
+
+/* movie card */
+
+.image-card {
+    position: relative;
+}
+.movie-card-top {
+    border-radius: 5px;
+    max-width: 100%;
+}
+.rating {
+    width: 45px;
+    height: 45px;
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 50%;
+    background-color: #74D5AA;
+    color: #294448; 
+    pointer-events: none; 
+}
+.movie-release-date {
+    color: #666B73;
+    padding-top: 20px;
+}
+.movie-title {
+    color: #FAFAFC; 
+    font-size: 20px;
+}
+
+/* Design for tablets and phones */
+/* Always add media queries at the bottom of the css file to avoid overriding issues */
+@media (max-width: 900px) {
+    .grid-container {
+        grid-template-columns: 1fr 1fr 1fr;
+    }
+} 
+@media (max-width: 600px) {
+    .grid-container {
+        grid-template-columns: 1fr 1fr;
+    }
+}
+@media (max-width: 375px) {
+    .grid-container {
+        grid-template-columns: 1fr;
+    }
+}
