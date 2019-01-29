@@ -11,25 +11,9 @@ jobs:
       - run:
           name: Run build
           command: npm run build
-  deploy:
-    docker:
-      - image: node:8.15.0-alpine
-    steps:
-      - checkout
-      - run:
-          name: Deploy deployment branch to Heroku
-          command: |
-            git push https://heroku:$HEROKU_API_KEY@git.heroku.com/$HEROKU_APP_NAME.git heroku-deployment-from-circle
-
 workflows:
   version: 2
-  install_build_deploy:
+  install_and_build:
     jobs:
-      - build
-      - deploy:
-          requires:
-            - build
-          filters:
-            branches:
-              only: heroku-deployment-from-circle
+- build
 
