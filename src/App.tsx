@@ -8,10 +8,10 @@ class App extends Component {
 
   render() {
     return (
-      <Router>
+      <Router basename={process.env.PUBLIC_URL}>
         <div className="App">  
           <Route exact path="/" component={Home}></Route>
-          <Route path="/movie-app-project/:movieId" component={MovieDetail}></Route>     
+          <Route path="/:movieId" component={MovieDetail}></Route>     
         </div>
       </Router>
       
