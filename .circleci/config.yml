@@ -8,9 +8,9 @@ jobs:
       - run: 
           name: Install dependencies
           command: npm ci
-      # - add_ssh_keys:
-      #     fingerprints:
-      #       - "e8:8b:73:4b:79:a8:ab:9f:c8:25:4f:10:60:29:cc:b0"
+      - add_ssh_keys:
+          fingerprints:
+            - "e8:8b:73:4b:79:a8:ab:9f:c8:25:4f:10:60:29:cc:b0"
       - run:
           name: Run build and deploy
           command: npm run deploy
