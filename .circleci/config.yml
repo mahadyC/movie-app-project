@@ -1,6 +1,6 @@
 version: 2
 jobs:
-  build:
+  deploy-job:
     docker:
       - image: node:8.15.0-alpine
     steps:
@@ -9,11 +9,15 @@ jobs:
           name: Install dependencies
           command: npm ci
       - run:
-          name: Run build
-          command: npm run build
+          name: Run build and deploy
+          command: npm run deploy
+      - add_ssh_keys:
+          fingerprints:
+            - "b5:d0:06:55:09:2e:e7:33:68:14:70:4e:80:d4:d7:ad"
+      
 workflows:
   version: 2
-  install_and_build:
+  install_build_deploy:
     jobs:
-      - build
+      - deploy-job
 
