@@ -13,7 +13,7 @@ jobs:
           command: npm run deploy
       - add_ssh_keys:
           fingerprints:
-            - "b5:d0:06:55:09:2e:e7:33:68:14:70:4e:80:d4:d7:ad"
+            - "d7:68:22:80:86:16:92:1e:6c:e6:be:9b:65:3d:ef:58"
       
 workflows:
   version: 2
