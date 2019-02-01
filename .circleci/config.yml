@@ -1,30 +1,22 @@
 version: 2
 jobs:
   deploy-job:
+    docker:
+      - image: node:8.15.0-alpine
     steps:
+      - checkout
+      - run: 
+          name: Install dependencies
+          command: npm ci
+      - run:
+          name: Run build and deploy
+          command: npm run deploy
       - add_ssh_keys:
           fingerprints:
             - "f0:8f:9e:dd:43:be:eb:3a:d1:1d:e6:1b:16:79:01:a9"
-
-# version: 2
-# jobs:
-#   deploy-job:
-#     docker:
-#       - image: node:8.15.0-alpine
-#     steps:
-#       - checkout
-#       - run: 
-#           name: Install dependencies
-#           command: npm ci
-#       - run:
-#           name: Run build and deploy
-#           command: npm run deploy
-#       - add_ssh_keys:
-#           fingerprints:
-#             - "f0:8f:9e:dd:43:be:eb:3a:d1:1d:e6:1b:16:79:01:a9"
-# workflows:
-#   version: 2
-#   install_build_deploy:
-#     jobs:
-#       - deploy-job
+workflows:
+  version: 2
+  install_build_deploy:
+    jobs:
+      - deploy-job
 
