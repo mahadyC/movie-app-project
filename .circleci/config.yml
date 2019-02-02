@@ -11,14 +11,6 @@ jobs:
       - run:
           name: Add .env
           command: echo REACT_APP_TMDB_API_KEY=$REACT_APP_TMDB_API_KEY
-      # - run:
-      #     name: Install Git and OpenSSH
-      #     command: apk add git openssh
-      - run:
-          name: Install and configure dependencies
-          command: |
-            git config --global user.email "henrik.raitasola@gmail.com"
-            git config --global user.name "henrikra"
       - add_ssh_keys:
           fingerprints:
             - "da:56:aa:36:74:60:e2:b0:13:53:50:8b:50:8c:4f:ac"
