@@ -1,8 +1,13 @@
-version: 2
-jobs:
-  build:
+version: 2.1
+
+executors:
+  node-executor:
     docker:
       - image: circleci/node:8.15
+
+jobs:
+  build:
+    executor: node-executor
     steps:
       - checkout
       - run:
@@ -17,8 +22,7 @@ jobs:
             - build
             - node_modules
   deploy:
-    docker:
-      - image: circleci/node:8.15
+    executor: node-executor
     steps:
       - checkout
       - attach_workspace:
@@ -39,7 +43,7 @@ jobs:
           command: npm run deploy
 
 workflows:
-  version: 2
+  version: 2.1
   install_build_deploy:
     jobs:
       - build
