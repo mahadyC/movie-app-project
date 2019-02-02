@@ -9,11 +9,8 @@ jobs:
           name: Install dependencies
           command: npm ci
       - run:
-          name: Install Git
-          command: apk add git
-      - run:
-          name: Install SSH
-          command: apk add openssh
+          name: Install Git and OpenSSH
+          command: apk add git openssh
       - run:
           name: Install and configure dependencies
           command: |
