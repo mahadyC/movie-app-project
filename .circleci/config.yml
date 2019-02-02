@@ -1,5 +1,16 @@
 version: 2
 jobs:
+  build:
+    docker:
+      - image: circleci/node:8.15
+    steps:
+      - checkout
+      - run:
+          name: Install dependencies
+          command: npm ci
+      - run:
+          name: Build
+          command: npm run build
   deploy:
     docker:
       - image: circleci/node:8.15
@@ -20,14 +31,17 @@ jobs:
           fingerprints:
             - "da:56:aa:36:74:60:e2:b0:13:53:50:8b:50:8c:4f:ac"
       - run:
-          name: Run build and deploy
+          name: Deploy
           command: npm run deploy
 
 workflows:
   version: 2
   install_build_deploy:
     jobs:
+      - build
       - deploy:
+          requires:
+            - build
           filters:
             branches:
               only: deploy-gh-page-from-circleci
