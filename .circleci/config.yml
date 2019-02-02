@@ -8,6 +8,9 @@ jobs:
       - run:
           name: Install dependencies
           command: npm ci
+      - run:
+          name: Add .env
+          command: echo REACT_APP_TMDB_API_KEY=$REACT_APP_TMDB_API_KEY
       # - run:
       #     name: Install Git and OpenSSH
       #     command: apk add git openssh
