@@ -30,4 +30,4 @@ workflows:
       - deploy:
           filters:
             branches:
-              only: deploy-gh-pages-from-circleci
+              only: deploy-gh-page-from-circleci
