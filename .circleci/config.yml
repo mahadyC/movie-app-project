@@ -12,6 +12,9 @@ jobs:
           name: Install Git
           command: apk add git
       - run:
+          name: Install SSH
+          command: apk add openssh
+      - run:
           name: Install and configure dependencies
           command: |
             git config user.email "henrik.raitasola@gmail.com"
