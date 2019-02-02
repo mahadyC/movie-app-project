@@ -27,4 +27,7 @@ workflows:
   version: 2
   install_build_deploy:
     jobs:
-      - deploy
+      - deploy:
+          filters:
+            branches:
+              only: deploy-gh-pages-from-circleci
