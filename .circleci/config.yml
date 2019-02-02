@@ -27,9 +27,9 @@ jobs:
       - attach_workspace:
           # Must be absolute path or relative path from working_directory
           at: .
-      # - run:
-      #     name: Install dependencies
-      #     command: npm ci
+      - run:
+          name: Install dependencies
+          command: npm ci
       - run:
           name: Add .env
           command: echo REACT_APP_TMDB_API_KEY=$REACT_APP_TMDB_API_KEY
