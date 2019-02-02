@@ -11,7 +11,6 @@ jobs:
       - run:
           name: Build
           command: npm run build
-      # Persist the specified paths (workspace/echo-output) into the workspace for use in downstream job. 
       - persist_to_workspace:
           root: .
           paths:
@@ -23,9 +22,6 @@ jobs:
       - checkout
       - attach_workspace:
           at: .
-      - run:
-          name: Install dependencies
-          command: npm ci
       - run:
           name: Add .env
           command: echo REACT_APP_TMDB_API_KEY=$REACT_APP_TMDB_API_KEY
