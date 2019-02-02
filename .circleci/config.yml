@@ -15,6 +15,7 @@ jobs:
           root: .
           paths:
             - build
+            - node_modules
   deploy:
     docker:
       - image: circleci/node:8.15
