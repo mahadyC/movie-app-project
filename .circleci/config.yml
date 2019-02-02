@@ -9,6 +9,9 @@ jobs:
           name: Install dependencies
           command: npm ci
       - run:
+          name: Install Git
+          command: apk add git
+      - run:
           name: Install and configure dependencies
           command: |
             git config user.email "henrik.raitasola@gmail.com"
