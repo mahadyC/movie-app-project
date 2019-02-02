@@ -13,7 +13,7 @@ jobs:
           command: echo REACT_APP_TMDB_API_KEY=$REACT_APP_TMDB_API_KEY
       - run:
         name: Add githu stuff
-        command:
+        command: |
           git config --global user.email $GH_MAIL
           git config --global user.name $GH_NAME
       - add_ssh_keys:
