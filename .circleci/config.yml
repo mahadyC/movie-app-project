@@ -22,7 +22,6 @@ jobs:
     steps:
       - checkout
       - attach_workspace:
-          # Must be absolute path or relative path from working_directory
           at: .
       - run:
           name: Install dependencies
@@ -31,7 +30,7 @@ jobs:
           name: Add .env
           command: echo REACT_APP_TMDB_API_KEY=$REACT_APP_TMDB_API_KEY
       - run:
-          name: Add githu stuff
+          name: Setup Git user
           command: |
             git config --global user.email $GH_EMAIL
             git config --global user.name $GH_NAME
