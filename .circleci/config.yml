@@ -11,14 +11,25 @@ jobs:
       - run:
           name: Build
           command: npm run build
+      # Persist the specified paths (workspace/echo-output) into the workspace for use in downstream job. 
+      - persist_to_workspace:
+          # Must be an absolute path, or relative path from working_directory. This is a directory on the container which is 
+          # taken to be the root directory of the workspace.
+          root: .
+          # Must be relative path from root
+          paths:
+            - build
   deploy:
     docker:
       - image: circleci/node:8.15
     steps:
       - checkout
-      - run:
-          name: Install dependencies
-          command: npm ci
+      - attach_workspace:
+          # Must be absolute path or relative path from working_directory
+          at: .
+      # - run:
+      #     name: Install dependencies
+      #     command: npm ci
       - run:
           name: Add .env
           command: echo REACT_APP_TMDB_API_KEY=$REACT_APP_TMDB_API_KEY
