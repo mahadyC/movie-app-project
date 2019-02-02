@@ -14,8 +14,8 @@ jobs:
       - run:
           name: Add githu stuff
           command: |
-            git config --global user.email "henrik.raitasola@gmail.com"
-            git config --global user.name "henrikra"
+            git config --global user.email $GH_EMAIL
+            git config --global user.name $GH_NAME
       - add_ssh_keys:
           fingerprints:
             - "da:56:aa:36:74:60:e2:b0:13:53:50:8b:50:8c:4f:ac"
