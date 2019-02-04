@@ -39,8 +39,14 @@ jobs:
           command: npm run deploy
       
 workflows:
-  version: 2
-  install_build_deploy:
+  version: 2.1
+  build_and_deploy:
     jobs:
-      - deploy-job
+      - build
+      - deploy:
+          requires:
+            - build
+          filters:
+            branches:
+              only: master
 
