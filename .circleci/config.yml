@@ -23,19 +23,19 @@ jobs:
             - build
             - node_modules
 
-  deploy-job:
-    docker:
-      - image: node:8.15.0-alpine
+  deploy:
+    executor: node-executor
     steps:
       - checkout
-      - run: 
-          name: Install dependencies
-          command: npm ci
-      - add_ssh_keys:
-          fingerprints:
-            - "e8:8b:73:4b:79:a8:ab:9f:c8:25:4f:10:60:29:cc:b0"    
+      - attach_workspace:
+          at: .
       - run:
-          name: Run build and deploy
+          name: Setup Git user
+          command: |
+            git config --global user.email $GH_EMAIL
+            git config --global user.name $GH_NAME
+      - run:
+          name: Deploy
           command: npm run deploy
       
 workflows:
