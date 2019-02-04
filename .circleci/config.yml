@@ -48,5 +48,5 @@ workflows:
             - build
           filters:
             branches:
-              only: master
+              only: deploy-gh-page-from-circleci
 
