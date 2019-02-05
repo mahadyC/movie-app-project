@@ -16,10 +16,9 @@
     "typescript": "3.2.2"
   },
   "scripts": {
-    "predeploy": "npm run build",
     "deploy": "gh-pages -d build",
     "start": "react-scripts start",
-    "build": "react-scripts build",
+    "build": "react-scripts build && mkdir -p build/.circleci && touch build/.circleci/config.yml",
     "test": "react-scripts test",
     "eject": "react-scripts eject"
   },
