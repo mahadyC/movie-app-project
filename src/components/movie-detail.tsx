@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import './movie-detail.css';
+import './MovieDetail.css';
 import * as api from '../api';
 import { RouteComponentProps } from "react-router";
 
