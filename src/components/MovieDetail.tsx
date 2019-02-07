@@ -42,7 +42,7 @@ class MovieDetail extends Component<Props> {
                                 <h1>{this.state.selected_movie.title}</h1>
                                 <div className="inlining">
                                     <div className="movie-rating">{this.state.selected_movie.vote_average} <span>/</span> <span>10</span></div>
-                                    <div className="genres">{this.state.selected_movie.genres.map((genre) => <div key={genre.id} className="genre">{genre.name}</div>)}</div>
+                                    <div className="genres">{this.state.selected_movie.genres[0].name}</div>
                                     <div className="release-date">{new Date(this.state.selected_movie.release_date).getFullYear()}</div>
                                 </div>                    
                                 <div className="overview">{this.state.selected_movie.overview}</div>

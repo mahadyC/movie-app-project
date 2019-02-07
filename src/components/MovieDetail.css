@@ -21,15 +21,11 @@
 }
 
 span, .genres, .release-date {
-    color: #9EB3C4;
+    color: #757D8F;
 }
 
-.genres, .genre, .release-date {
+.genres, .release-date {
     padding: 5px;
-}
-
-.genres {
-    display: flex;
 }
 
 .overview {
