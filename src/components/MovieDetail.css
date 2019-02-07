@@ -13,15 +13,12 @@
 
 .movie-detail h1 {
     color: rgb(241, 239, 247);
-    text-align: left;
     font-size: 3.5em;
 }
 
 .rating {
     display: inline;
-    text-align: left;
     color: #ECEBEE;
-    text-align: left;
 }
 
 span, .genres, .release-date {
@@ -38,7 +35,6 @@ span, .genres, .release-date {
 
 .overview {
     color: rgb(210, 209, 211);
-    text-align: left;
     padding-top: 3%;
     padding-bottom: 7%;
 }
@@ -51,7 +47,6 @@ span, .genres, .release-date {
     width: 154px;
     height: 200px;
     margin: 2%;
-    text-align: left;
 }
 
 .inlining {
