@@ -16,9 +16,8 @@
     font-size: 56px;
 }
 
-.rating {
-    display: inline;
-    color: #ECEBEE;
+.movie-rating {
+    color: #FFFFFF;
 }
 
 span, .genres, .release-date {
