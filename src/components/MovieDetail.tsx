@@ -7,6 +7,12 @@ type Genres = {
     id: number;
     name: string;
 }
+
+type Casts = {
+    name: string;
+    prpfile_path: string;
+}
+
 type Movie = {
     id: string;
     title: string;
@@ -15,14 +21,17 @@ type Movie = {
     vote_average: number;
     overview: string;
     genres: Genres[];
+    backdrop_path: string;
+    casts: Casts[];
 }
 
 type State = {
     selected_movie?: Movie;
+    casts?: Casts[];
 }
 type Props = RouteComponentProps<{movieId: string}>;
 
-class MovieDetail extends Component<Props> {
+class MovieDetail extends Component<Props, State> {
 
     state: State = { 
     }
@@ -31,27 +40,33 @@ class MovieDetail extends Component<Props> {
         api.getMovieDetail(this.props.match.params.movieId).then((movie) => {
           this.setState({selected_movie: movie})
         })
+        api.getMovieCasts(this.props.match.params.movieId).then((casts) => {
+            this.setState({casts: casts})
+        })
     }
 
     render() {
+        console.log(this.state.casts)
         return (
             <div className="movie-detail-container">
                 {
                     (this.state.selected_movie)
-                        ?   <div className="movie-detail">
-                                <h1>{this.state.selected_movie.title}</h1>
-                                <div className="inlining">
-                                    <div className="movie-rating">{this.state.selected_movie.vote_average} <span>/</span> <span>10</span></div>
-                                    <div className="genres">{this.state.selected_movie.genres[0].name}</div>
-                                    <div className="release-date">{new Date(this.state.selected_movie.release_date).getFullYear()}</div>
-                                </div>                    
-                                <div className="overview">{this.state.selected_movie.overview}</div>
-                                <div className="images">
-                                    <div className="image" style={{ backgroundImage: `url(https://image.tmdb.org/t/p/w154/${this.state.selected_movie.poster_path})`}}></div>
-                                    <div className="image"style={{ backgroundImage: `url(https://image.tmdb.org/t/p/w154/${this.state.selected_movie.poster_path})`}}></div>
-                                    <div className="image" style={{ backgroundImage: `url(https://image.tmdb.org/t/p/w154/${this.state.selected_movie.poster_path})`}}></div>
-                                </div>
-                                
+                        ?   <div className="movie-detail" style={{ backgroundImage: `url(https://image.tmdb.org/t/p/w780/${this.state.selected_movie.backdrop_path})`}}>
+                                <div className='bg-image-overlay'>
+                                    <div className='detail-container'>
+                                        <h1>{this.state.selected_movie.title}</h1>
+                                        <div className="inlining">
+                                            <div className="movie-rating">{this.state.selected_movie.vote_average} <span>/</span> <span>10</span></div>
+                                            <div className="genres">{this.state.selected_movie.genres[0].name} <span>.</span> </div>
+                                            <div className="release-date">{new Date(this.state.selected_movie.release_date).getFullYear()}</div>
+                                        </div>                    
+                                        <div className="overview">{this.state.selected_movie.overview}</div>
+                                        <div className="images">
+                                        {(this.state.casts) ? <div>{this.state.casts[0].name}</div> :<div></div>} 
+                                        
+                                        </div>
+                                    </div>    
+                                </div>   
                             </div>
                         :   <div>Movie detail not available</div>
                 }
