@@ -1,61 +1,95 @@
-/* movie detail */
-
-.movie-detail-container {
-    background: #113049;
-    width: 100%;
-    height: 100%;
-}
-
 .movie-detail {
-    background: #232d32;
-    opacity: 0.9;
-    padding: 15% 20% 20% 20%;
-}
-
-.movie-detail h1 {
-    color: rgb(241, 239, 247);
-    text-align: left;
-    font-size: 3.5em;
-}
-
-.rating {
-    display: inline;
-    text-align: left;
-    color: #ECEBEE;
-    text-align: left;
-}
-
-span, .genres, .release-date {
-    color: #9EB3C4;
-}
-
-.genres, .genre, .release-date {
-    padding: 5px;
-}
-
-.genres {
-    display: flex;
-}
-
-.overview {
-    color: rgb(210, 209, 211);
-    text-align: left;
-    padding-top: 3%;
-    padding-bottom: 7%;
-}
-
-.images {
-    display: flex;
-}
-
-.image {
-    width: 154px;
-    height: 200px;
-    margin: 2%;
-    text-align: left;
-}
-
-.inlining {
+    background-size: cover;
+    min-height: 100vh;
+  }
+  
+  .detail-container {
+    width: 100%;
+    min-height: 100vh;
     display: flex;
     align-items: center;
-}
+    justify-content: center;
+  }
+  
+  .inlining {
+    display: flex;
+    max-width: 920px;
+    max-height: 100vh;
+    background-color: rgba(0, 0, 0, 0.85);
+      border: blanchedalmond solid;
+      border-radius: 5px;
+  }
+  
+  .inlining img {
+    width: 383px;
+    height: 100%;
+  }
+  
+  .data-container {
+    padding: 20px;
+    width: 100%;
+  }
+  
+  h1 {
+    margin: 0;
+    padding-top: 0;
+  }
+  
+  .movie-detail h1 {
+    color: #ffffff;
+    font-size: 2rem;
+    padding-top: 0;
+  }
+  
+  .movie-detail h2 {
+    color: #00FC87;
+      font-size: 1.5rem;
+  }
+  
+  p {
+    font-size: 1rem;
+    line-height: 1.5;
+  }
+  
+  .genre-list {
+      display: flex;
+      font-size: 1.4rem;
+  }
+  
+  .movie-rating,
+  .movie-runtime,
+  .movie-revenue,
+  .release-date {
+      color: #ffffff;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+  }
+  
+  span,
+  .genre {
+    color: #00FC87;
+  }
+  
+  .genre{
+    padding: 5px;
+  }
+  
+  .overview {
+    color: #f9f9fa;
+  }
+  
+  .additional-info {
+      display: flex;
+      justify-content: space-around;
+      border: blanchedalmond solid;
+      margin-top: 2rem;
+      padding: 10px;
+  }
+  
+  .additional-info .additional-info-content {
+      font-size: 1.4rem;
+      color: #00FC87;
+      padding: 5px;
+  }
+  

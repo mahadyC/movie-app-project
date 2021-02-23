@@ -11,3 +11,8 @@ export const getMovieDetail = (movieId: string) =>
   fetch(`${api}/${movieId}?api_key=${API_KEY}`)
     .then(res => res.json())
     .then(data => data)
+
+export const getMovieCasts = (movieId: string) =>
+  fetch(`${api}/${movieId}/credits?api_key=${API_KEY}`)
+    .then(res => res.json())
+    .then(data => data.cast)   
