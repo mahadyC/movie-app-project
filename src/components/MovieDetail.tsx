@@ -72,7 +72,7 @@ class MovieDetail extends Component<Props, State> {
                         <h2>{movie.tagline}</h2>
                         <p className="overview">{movie.overview}</p>
                         <div className="genre-list">
-                        {movie.genres.map(genre => <div className="genre">{genre.name} <span></span> </div>)}  
+                        {movie.genres.map(genre => <div className="genre" key={genre.id}>{genre.name} <span></span> </div>)}  
                         </div>
                         <div className="additional-info">
                           <div className="release-date">Release:<div className="additional-info-content">{movie.release_date}</div> </div>
