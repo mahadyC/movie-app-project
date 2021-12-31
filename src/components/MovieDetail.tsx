@@ -54,8 +54,6 @@ class MovieDetail extends Component<Props, State> {
 
   render() {
 		const movie = this.state.selected_movie;
-		console.log(`selected movie ${movie}`)
-		console.log(this.state)
     return (
       <div className="movie-detail-container">
         {
